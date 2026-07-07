@@ -15,13 +15,18 @@ body {
 
 #container {
 	display: grid;
-	min-height: 800px;
-	min-width: 800px;
-	max-height: 800px;
-	max-width: 800px;
+	height: 600px;
+	width: 600px;
 	grid-template-columns: repeat(var(--grid-rows), 1fr);
 	grid-template-rows: repeat(var(--grid-columns), 1fr);
 	border: 2px solid black;
+}
+
+@media only screen and (max-width: 600px) {
+	#container {
+		max-height: 400px;
+		max-width: 400px;
+	}
 }
 
 .grid-item {
