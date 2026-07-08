@@ -19,12 +19,6 @@ function createSketch(rows, columns) {
 	});
 }
 
-//async function createNewGrid() {
-//	return new Promise((resolve) => {
-//		resolve(newGrid);
-//	});
-//}
-
 const setValue = document.querySelector("#setValue");
 setValue.addEventListener("click", () => {
 	let newGrid;
