@@ -13,15 +13,19 @@ function createSketch(rows, columns) {
 	let gridItems = document.querySelectorAll(".grid-item");
 	gridItems.forEach((i) => {
 		i.addEventListener("mouseover", () => {
-			i.style.backgroundColor = "red";
+			i.style.backgroundColor =
+				"#" + Math.floor(Math.random() * 16777215).toString(16);
 		});
 	});
 }
 
 const setValue = document.querySelector("#setValue");
-setValue.addEventListener("click", (e) => {
-	e.preventDefault();
+setValue.addEventListener("click", () => {
 	let newGrid = prompt("Insert new size of grid:");
+	let gridItems = document.querySelectorAll(".grid-item");
+	gridItems.forEach((i) => {
+		i.remove();
+	});
 	createSketch(newGrid, newGrid);
 });
 
