@@ -19,9 +19,21 @@ function createSketch(rows, columns) {
 	});
 }
 
+//async function createNewGrid() {
+//	return new Promise((resolve) => {
+//		resolve(newGrid);
+//	});
+//}
+
 const setValue = document.querySelector("#setValue");
 setValue.addEventListener("click", () => {
-	let newGrid = prompt("Insert new size of grid:");
+	let newGrid;
+	do {
+		newGrid = prompt("Insert new size of grid:");
+		if (newGrid === "") alert("Empty! Insert a new size of grid.");
+		if (newGrid % 1 != 0)
+			alert("Invalid! Insert a number to create new grid.");
+	} while (newGrid === "" || newGrid % 1 != 0);
 	let gridItems = document.querySelectorAll(".grid-item");
 	gridItems.forEach((i) => {
 		i.remove();
