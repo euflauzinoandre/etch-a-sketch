@@ -27,7 +27,8 @@ setValue.addEventListener("click", () => {
 		if (newGrid === "") alert("Empty! Insert a new size of grid.");
 		if (newGrid % 1 != 0)
 			alert("Invalid! Insert a number to create new grid.");
-	} while (newGrid === "" || newGrid % 1 != 0);
+		if (newGrid > 100) alert("Max size of grid is 100.");
+	} while (newGrid === "" || newGrid % 1 != 0 || newGrid > 100);
 	let gridItems = document.querySelectorAll(".grid-item");
 	gridItems.forEach((i) => {
 		i.remove();
